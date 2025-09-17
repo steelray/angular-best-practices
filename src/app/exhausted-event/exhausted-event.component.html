@@ -1,0 +1,16 @@
+<button 
+  appExhaustedEvent="click" 
+  [handler]="getInfo" 
+  (exhaustedEventResult)="onExhaustedEventResult($event)"
+>Get A TODO info</button>
+
+@if(todoInfo(); as todo) {
+  <div class="todo-info">
+    <h3>TODO Info:</h3>
+    <p><strong>ID:</strong> {{ todo.id }}</p>
+    <p><strong>Title:</strong> {{ todo.title }}</p>
+    <p><strong>Completed:</strong> {{ todo.completed }}</p>
+  </div>
+} @else {
+  <p>No TODO info available. Click the button to fetch data.</p>
+}
